@@ -6,6 +6,7 @@
     "build": "npm-run-all build:* --sequential --print-name",
     "build:rspack": "cross-env RSPACK=1 rspack",
     "build:rsbuild": "rsbuild build",
+    "build:esbuild": "esbuild src/index.js --bundle --loader:.png=file --outdir=esbuild-dist",
     "build:webpack": "cross-env WEBPACK=1 webpack -c ./rspack.config.mjs",
     "dev:rspack": "cross-env RSPACK=1 rspack dev",
     "dev:rsbuild": "rsbuild dev",
@@ -21,6 +22,7 @@
   "devDependencies": {
     "@rsbuild/core": "^1.1.13",
     "cross-env": "^7.0.3",
+    "esbuild": "^0.25.5",
     "npm-run-all2": "^7.0.2"
   },
   "packageManager": "pnpm@9.15.2"
