@@ -13,21 +13,26 @@ if (!isRunningRspack && !isRunningWebpack) {
  * @type {import('webpack').Configuration | import('@rspack/cli').Configuration}
  */
 const config = {
-  mode: "development",
+  mode: "production",
   devtool: false,
   entry: {
     main: "./src/index",
   },
-  plugins: [new HtmlWebpackPlugin()],
   output: {
     clean: true,
     path: isRunningWebpack
       ? path.resolve(__dirname, "webpack-dist")
       : path.resolve(__dirname, "rspack-dist"),
     filename: "[name].js",
+    publicPath: '/',
   },
-  experiments: {
-    css: true,
+  module: {
+    rules: [
+        {
+            test: /\.png/,
+            type: 'asset/resource',
+        }
+    ]
   },
 };
 

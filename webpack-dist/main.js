@@ -1,0 +1,1 @@
+(()=>{"use strict";GLOBAL.FOO,console.log("bar")})();

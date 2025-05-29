@@ -1,3 +1,3 @@
-import('./render').then(exports => {
-    exports.render()
-})
+import { bar } from "./foo/index.js";
+
+console.log(bar);
